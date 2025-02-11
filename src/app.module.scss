@@ -1,0 +1,72 @@
+.no-data {
+  font-style: italic;
+}
+
+.posts {
+  max-width: 400px;
+  margin: 0 auto;
+
+  .post {
+    display: flex;
+    align-items: baseline;
+    padding: 0 10px;
+
+    &:nth-child(odd) {
+      background-color: #f0f0f0;
+    }
+
+    h2 {
+      display: inline-block;
+      font-size: 20px;
+      margin-right: 10px;
+    }
+
+    .views {
+      font-size: 14px;
+    }
+  }
+
+  .success {
+    color: green;
+    background-color: lightgreen;
+    padding: 5px;
+    margin: 10px 0;
+    border-radius: 3px;
+    border: solid 1px #7bb35d;
+  }
+
+  form {
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    border-radius: 3px;
+    background-color: lightblue;
+    margin-top: 10px;
+
+    input {
+      flex-grow: 1;
+      padding: 5px;
+      border: none;
+      outline: none;
+      line-height: 30px;
+      -webkit-border-radius: 3px 0 0 3px;
+      border-radius: 3px 0 0 3px;
+    }
+
+    button {
+      border: none;
+      outline: none;
+      -webkit-border-radius: 0 3px 3px 0;
+      border-radius: 0 3px 3px 0;
+      padding: 0 10px;
+      background-color: #f0f0f0;
+      transition: all 0.3s ease-in-out;
+      cursor: pointer;
+
+      &:hover {
+        color: #fff;
+        background-color: #82addc;
+      }
+    }
+  }
+}
