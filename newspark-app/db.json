@@ -1,0 +1,101 @@
+{
+  "tasks": [
+    {
+      "id": "cabc",
+      "user": "1",
+      "title": "Review project requirements",
+      "created": "2025-02-16T08:51:31.159Z",
+      "last_modified": "2025-02-16T08:51:31.159Z"
+    },
+    {
+      "id": "0291",
+      "user": "1",
+      "title": "Prepare project plan",
+      "created": "2025-02-16T08:51:32.305Z",
+      "last_modified": "2025-02-16T09:00:17.438Z"
+    },
+    {
+      "id": "0660",
+      "user": "1",
+      "title": "Conduct team meeting",
+      "created": "2025-02-16T08:51:35.915Z",
+      "last_modified": "2025-02-16T08:51:35.915Z"
+    },
+    {
+      "id": "8323",
+      "user": "2",
+      "title": "Write test cases",
+      "created": "2025-02-16T09:01:03.710Z",
+      "last_modified": "2025-02-16T09:01:03.710Z"
+    },
+    {
+      "id": "a078",
+      "user": "2",
+      "title": "Execute regression tests",
+      "created": "2025-02-16T09:01:07.679Z",
+      "last_modified": "2025-02-16T09:01:07.679Z"
+    },
+    {
+      "id": "b123",
+      "user": "2",
+      "title": "Log defects",
+      "created": "2025-02-16T09:01:10.000Z",
+      "last_modified": "2025-02-16T09:01:10.000Z"
+    },
+    {
+      "id": "c456",
+      "user": "3",
+      "title": "Implement login feature",
+      "created": "2025-02-16T09:02:00.000Z",
+      "last_modified": "2025-02-16T09:02:00.000Z"
+    },
+    {
+      "id": "d789",
+      "user": "3",
+      "title": "Fix bugs in user profile",
+      "created": "2025-02-16T09:02:30.000Z",
+      "last_modified": "2025-02-16T09:02:30.000Z"
+    },
+    {
+      "id": "e012",
+      "user": "3",
+      "title": "Optimize database queries",
+      "created": "2025-02-16T09:03:00.000Z",
+      "last_modified": "2025-02-16T09:03:00.000Z"
+    },
+    {
+      "id": "f345",
+      "user": "3",
+      "title": "Update API documentation",
+      "created": "2025-02-16T09:03:30.000Z",
+      "last_modified": "2025-02-16T09:03:30.000Z"
+    },
+    {
+      "id": "2b21",
+      "user": "1",
+      "title": "Create planning",
+      "created": "2025-02-16T10:12:37.555Z",
+      "last_modified": "2025-02-16T10:12:37.555Z"
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "username": "admin",
+      "password": "d033e22ae348aeb5660fc2140aec35850c4da997",
+      "superuser": true
+    },
+    {
+      "id": "2",
+      "username": "tester",
+      "password": "ab4d8d2a5f480a137067da17100271cd176607a1",
+      "superuser": false
+    },
+    {
+      "id": "3",
+      "username": "developer",
+      "password": "3dacbce532ccd48f27fa62e993067b3c35f094f7",
+      "superuser": false
+    }
+  ]
+}
