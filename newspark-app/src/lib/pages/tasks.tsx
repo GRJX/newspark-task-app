@@ -190,7 +190,7 @@ const Tasks = () => {
         <LogoutButton />
       </div>
       <div className={styles.messagePlaceholder}>
-        {/* {showSuccessMessage && <div className={styles.success} data-testid="alert-message">Task added</div>} */}
+        {showSuccessMessage && <div className={styles.success} data-testid="alert-message"></div>}
         {showEditMessage && <div className={styles.warning} data-testid="alert-message">Task edited</div>}
         {showDeleteMessage && <div className={styles.error} data-testid="alert-message">Task deleted</div>}
         {showErrorMessage && <div className={styles.error} data-testid="error-message">Task title cannot be empty</div>}
