@@ -100,7 +100,7 @@ python/
 
 1. If you see import errors, ensure your virtual environment is activated
 2. If Playwright fails to start, try running `playwright install` again
-3. Verify the application is running at `http://localhost:5173` before starting tests
+3. Verify the application is running at `http://localhost:5173/login` before starting tests
 
 ## Notes
 

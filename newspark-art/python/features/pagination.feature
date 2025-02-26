@@ -13,7 +13,7 @@ Feature: Pagination
     And I am on the tasks page
     And I am on a page other than the first page
     When I click the Previous button
-    Then I should see the previous page of tasks
+    Then I should see the first page of tasks
     And the Previous button should be disabled
 
   Scenario: Display current page number and total pages

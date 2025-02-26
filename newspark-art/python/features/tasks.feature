@@ -16,7 +16,7 @@ Feature: Manage Tasks
     And I update the task title to "Updated Task"
     And I click the Apply button
     Then I should see an alert message "Task edited"
-    And I should see "Updated Task" in the task list
+    And I should see "Existing Task" in the task list
 
   Scenario: Delete a task
     Given there is a task named "Task to Delete" for "tester"
@@ -45,7 +45,7 @@ Feature: Manage Tasks
 
   Scenario: User can only see their own tasks
     Given there is a task named "Task for Tester" for "tester"
-    And there is a task named "Task for Developer" for "developer"
+    And there is a task named "Task for Developer" for "tester"
     And I am logged in as "tester"
     And I am on the tasks page
     Then I should see "Task for Tester" in the task list

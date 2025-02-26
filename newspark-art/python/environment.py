@@ -26,8 +26,8 @@ def before_scenario(context, scenario):
             ignore_https_errors=True
         )
         context.page = context.browser_context.new_page()
-        context.page.set_default_timeout(10000)
-        context.page.set_default_navigation_timeout(10000)
+        context.page.set_default_timeout(5000)
+        context.page.set_default_navigation_timeout(5000)
         
         # Initialize page objects
         context.login_page = LoginPage(context.page)

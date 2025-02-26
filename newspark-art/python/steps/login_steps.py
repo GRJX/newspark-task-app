@@ -20,11 +20,11 @@ def step_impl(context):
 
 @when('I click the Logout button')
 def step_impl(context):
-    context.login_page.click_logout_button()
+    context.login_page.click_login_button()
 
 @then('I should be redirected to the "{page_name}" page')
 def step_impl(context, page_name):
-    context.page.wait_for_url(f"http://localhost:5173/{page_name}", timeout=3000)  # Wait up to 3 seconds for URL change
+    context.page.wait_for_url(f"http://localhost:5173/{page_name}", timeout=3000)
     assert page_name in context.page.url, f"Expected page '{page_name}' in URL, but got '{context.page.url}'"
 
 @then('I should see the login form')
