@@ -22,13 +22,13 @@ const Pagination: React.FC<PaginationProps> = ({ currentPage, totalPages, onPage
 
   return (
     <div className={styles.pagination}>
-      <button onClick={handlePrevious} disabled={currentPage === 1}>
+      <button onClick={handlePrevious} disabled={currentPage === 1} data-testid="previous-button">
         Previous
       </button>
       <span>
-        Page {currentPage} of {totalPages}
+        Page <span data-testid="current-page-number">{currentPage}</span> of <span data-testid="total-page-number">{totalPages}</span>
       </span>
-      <button onClick={handleNext} disabled={currentPage === totalPages}>
+      <button onClick={handleNext} disabled={currentPage === totalPages} data-testid="next-button">
         Next
       </button>
     </div>

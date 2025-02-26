@@ -1,0 +1,37 @@
+# Virtual Environment
+.venv/
+venv/
+ENV/
+
+# Python cache files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+
+# Test cache
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Playwright
+**/test-results/
+**/playwright-report/
+**/playwright/.cache/
+
+# IDE specific files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Environment variables
+.env
+.env.local
+
+# Logs
+*.log

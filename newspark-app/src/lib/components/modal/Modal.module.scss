@@ -63,3 +63,14 @@ button[type="button"] {
 button[type="button"]:hover {
   background-color: #d32f2f;
 }
+
+.messagePlaceholder {
+  height: 1.5rem; /* Adjust the height as needed */
+  margin-bottom: 1rem;
+}
+
+.error {
+  color: #f44336;
+  margin-top: 1rem;
+  font-size: 1.2rem;
+}

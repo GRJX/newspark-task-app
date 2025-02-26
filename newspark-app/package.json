@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "concurrently --kill-others \"npx json-server --watch db.json --port 3001\" \"vite\"",
+    "dev": "concurrently --kill-others \"npx json-server --watch ../newspark-db/db.json --port 3001\" \"vite\"",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview"

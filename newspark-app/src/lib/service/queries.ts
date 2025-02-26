@@ -1,7 +1,7 @@
 import { useMutation, useQuery, QueryClient } from "@tanstack/react-query";
 import axios from "axios";
-import { Task } from "../models/task";
-import { User } from "../models/user";
+import { Task } from "../../service/models/task";
+import { User } from "../../service/models/user";
 
 const useTasks = () =>
   useQuery({

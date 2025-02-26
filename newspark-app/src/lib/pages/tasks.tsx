@@ -3,7 +3,7 @@ import styles from "./tasks.module.scss";
 import Loader from "../components/loader/loader";
 import { useAddTask, useTasks, useDeleteTask, useEditTask, fetchUsers } from "../service/queries";
 import { useEffect, useState } from "react";
-import { User } from "../models/user";
+import { User } from "../../service/models/user";
 import Modal from "../components/modal/EditModal";
 import DeleteModal from "../components/modal/DeleteModal";
 import { useNavigate } from "react-router-dom";
@@ -25,9 +25,11 @@ const Tasks = () => {
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
   const [showEditMessage, setShowEditMessage] = useState(false);
   const [showDeleteMessage, setShowDeleteMessage] = useState(false);
+  const [showErrorMessage, setShowErrorMessage] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const tasksPerPage = 10;
-
+  const [modalErrorMessage, setModalErrorMessage] = useState("");
+  const timeout = 10000;
   const handlePageChange = (page: number) => {
     setCurrentPage(page);
   };
@@ -43,9 +45,12 @@ const Tasks = () => {
   useEffect(() => {
     if (addTask.isSuccess) {
       setShowSuccessMessage(true);
+      setShowEditMessage(false);
+      setShowDeleteMessage(false);
+      setShowErrorMessage(false);
       const timer = setTimeout(() => {
         setShowSuccessMessage(false);
-      }, 5000);
+      }, timeout);
       return () => clearTimeout(timer);
     }
   }, [addTask.isSuccess]);
@@ -53,9 +58,12 @@ const Tasks = () => {
   useEffect(() => {
     if (editTask.isSuccess) {
       setShowEditMessage(true);
+      setShowSuccessMessage(false);
+      setShowDeleteMessage(false);
+      setShowErrorMessage(false);
       const timer = setTimeout(() => {
         setShowEditMessage(false);
-      }, 5000);
+      }, timeout);
       return () => clearTimeout(timer);
     }
   }, [editTask.isSuccess]);
@@ -63,9 +71,12 @@ const Tasks = () => {
   useEffect(() => {
     if (deleteTask.isSuccess) {
       setShowDeleteMessage(true);
+      setShowSuccessMessage(false);
+      setShowEditMessage(false);
+      setShowErrorMessage(false);
       const timer = setTimeout(() => {
         setShowDeleteMessage(false);
-      }, 5000);
+      }, timeout);
       return () => clearTimeout(timer);
     }
   }, [deleteTask.isSuccess]);
@@ -90,6 +101,17 @@ const Tasks = () => {
     const titleValue = titleElement?.value;
     titleElement.value = "";
 
+    if (!titleValue.trim()) {
+      setShowErrorMessage(true);
+      setShowSuccessMessage(false);
+      setShowEditMessage(false);
+      setShowDeleteMessage(false);
+      const timer = setTimeout(() => {
+        setShowErrorMessage(false);
+      }, timeout);
+      return () => clearTimeout(timer);
+    }
+
     const user = JSON.parse(sessionStorage.getItem("user") || "{}");
     if (user.id) {
       addTask.mutate({ title: titleValue, user: user.id });
@@ -111,9 +133,22 @@ const Tasks = () => {
     setIsEditModalOpen(false);
     setCurrentTaskId(null);
     setCurrentTaskTitle("");
+    setModalErrorMessage("");
   };
 
   const handleEditModalSubmit = (title: string) => {
+    if (!title.trim()) {
+      setModalErrorMessage("Task title cannot be empty");
+      setShowErrorMessage(false);
+      setShowSuccessMessage(false);
+      setShowEditMessage(false);
+      setShowDeleteMessage(false);
+      const timer = setTimeout(() => {
+        setModalErrorMessage("");
+      }, timeout);
+      return () => clearTimeout(timer);
+    }
+
     if (currentTaskId !== null) {
       editTask.mutate({ taskId: currentTaskId, title });
     }
@@ -155,9 +190,10 @@ const Tasks = () => {
         <LogoutButton />
       </div>
       <div className={styles.messagePlaceholder}>
-        {showSuccessMessage && <div className={styles.success}>Task added!</div>}
-        {showEditMessage && <div className={styles.warning}>Task edited!</div>}
-        {showDeleteMessage && <div className={styles.error}>Task deleted!</div>}
+        {showSuccessMessage && <div className={styles.success} data-testid="alert-message">Task added</div>}
+        {showEditMessage && <div className={styles.warning} data-testid="alert-message">Task edited</div>}
+        {showDeleteMessage && <div className={styles.error} data-testid="alert-message">Task deleted</div>}
+        {showErrorMessage && <div className={styles.error} data-testid="error-message">Task title cannot be empty</div>}
       </div>
       <form onSubmit={handleSubmit} className={styles.form}>
         <input type="text" id="title" name="title" placeholder="Title" data-testid="title-input" />
@@ -215,6 +251,7 @@ const Tasks = () => {
         onClose={handleEditModalClose}
         onSubmit={handleEditModalSubmit}
         initialTitle={currentTaskTitle}
+        errorMessage={modalErrorMessage}
       />
 
       <DeleteModal

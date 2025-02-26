@@ -16,10 +16,10 @@ const DeleteModal: React.FC<DeleteModalProps> = ({ isOpen, onClose, onConfirm })
         <h2>Confirm Deletion</h2>
         <p>Are you sure you want to delete this task?</p>
         <div className={styles.buttons}>
-          <button type="button" onClick={onClose}>
+          <button data-testid="cancel-button" type="submit" onClick={onClose}>
             Cancel
           </button>
-          <button type="button" onClick={onConfirm}>
+          <button data-testid="delete-button" type="button" onClick={onConfirm}>
             Delete
           </button>
         </div>
