@@ -63,6 +63,28 @@ Test results will be displayed in the terminal, showing:
 - Steps passed/failed
 - Duration of test execution
 
+### 4. Debug Tests
+
+To debug tests in VS Code:
+
+1. Open the project in VS Code:
+    - Create or open the `.vscode/launch.json` file
+    - It should show the debug configurations including "Python: Behave current file"
+
+2. Set breakpoints:
+    - Click the line number in your step definitions where you want to pause
+    - A red dot will appear indicating a breakpoint
+
+3. Start debugging:
+    - Open the feature file you want to debug
+    - Press F5 or select "Run and Debug" from the sidebar
+    - Choose "Python: Behave current file"
+
+4. Use debug controls:
+    - Step through code using F10 (step over) or F11 (step into)
+    - Inspect variables in the debug sidebar
+    - Use the debug console to evaluate expressions
+
 ## Project Structure
 
 ```
@@ -70,7 +92,6 @@ python/
 ├── .venv/                 # Virtual environment (created after setup)
 ├── pages/                 # Page objects
 ├── steps/                 # Step definitions
-├── utils/                 # Utility functions
 ├── requirements.txt       # Python dependencies
 └── README.md             # This file
 ```
