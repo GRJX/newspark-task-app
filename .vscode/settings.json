@@ -1,4 +1,12 @@
 {
+    "explorer.fileNesting.enabled": true,
+    "explorer.fileNesting.patterns": {  // shows *.feature.cs files as nested items
+        "*.feature": "${capture}.feature.cs"
+    },
+    "files.exclude": { // excludes compilation result
+        "**/obj/": true,
+        "**/bin/": true,
+    },
     "python.testing.pytestArgs": [
         "newspark-art"
     ],
