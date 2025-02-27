@@ -21,13 +21,6 @@ public class PaginationSteps
         _tasksPage = new TasksPage(_page);
     }
 
-    [Given("I am on the tasks page")]
-    [When("I am on the tasks page")]
-    public async Task GivenIAmOnTheTasksPage()
-    {
-        await _tasksPage.Navigate();
-    }
-
     [Given("there are multiple pages of tasks")]
     public async Task GivenThereAreMultiplePagesOfTasks()
     {

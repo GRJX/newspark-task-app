@@ -1,4 +1,3 @@
-@test
 Feature: Pagination
 
   Scenario: Navigate to the next page of tasks

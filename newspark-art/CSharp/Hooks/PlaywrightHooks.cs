@@ -2,6 +2,7 @@ using System.Threading.Tasks;
 using Microsoft.Playwright;
 using Reqnroll;
 using System;
+using System.IO;
 
 namespace Newspark.Hooks
 {
@@ -22,6 +23,14 @@ namespace Newspark.Hooks
         [BeforeScenario]
         public async Task BeforeScenario()
         {
+            // Reset database by copying init_db.json to db.json
+            string projectRoot = "../../../../../";
+            
+            string sourceFile = Path.Combine(projectRoot, "newspark-db", "init_db.json");
+            string destinationFile = Path.Combine(projectRoot, "newspark-db", "db.json");
+
+            File.Copy(sourceFile, destinationFile, true);
+
             _playwright = await Playwright.CreateAsync();
             _browser = await _playwright.Chromium.LaunchAsync(new BrowserTypeLaunchOptions
             {
