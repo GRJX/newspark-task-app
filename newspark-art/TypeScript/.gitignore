@@ -1,0 +1,32 @@
+# Node.js dependencies
+node_modules/
+package-lock.json
+
+# Playwright test output and reports
+test-results/
+playwright-report/
+trace.zip
+*.log
+
+# TypeScript build output
+dist/
+*.tsbuildinfo
+
+# Cucumber reports
+reports/
+*.cucumber/
+
+# Environment and config files
+.env
+.env.local
+.env.test
+.env.production
+
+# macOS system files
+.DS_Store
+
+# Windows system files
+Thumbs.db
+
+# Linux system files
+*.swp
