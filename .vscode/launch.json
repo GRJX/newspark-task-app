@@ -23,5 +23,19 @@
             "console": "integratedTerminal",
             "stopAtEntry": false
         },
+        {
+            "name": "npm test Debug",
+            "type": "node",
+            "request": "launch",
+            "cwd": "${workspaceFolder}/newspark-art/TypeScript",
+            "runtimeExecutable": "npm",
+            "runtimeArgs": ["test", "--", "--inspect-brk"],
+            "console": "integratedTerminal",
+            "skipFiles": ["<node_internals>/**"],
+            "resolveSourceMapLocations": [
+                "${workspaceFolder}/**",
+                "!**/node_modules/**"
+            ]
+        }
     ]
 }
