@@ -25,7 +25,6 @@ namespace Newspark.Hooks
         {
             // Reset database by copying init_db.json to db.json
             string projectRoot = "../../../../../";
-            
             string sourceFile = Path.Combine(projectRoot, "newspark-db", "init_db.json");
             string destinationFile = Path.Combine(projectRoot, "newspark-db", "db.json");
 
