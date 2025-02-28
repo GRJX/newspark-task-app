@@ -1,0 +1,32 @@
+# .NET Core/ASP.NET Core
+bin/
+obj/
+*.dll
+*.exe
+*.pdb
+*.log
+*.cache
+*.config
+*.csproj.user
+*.db
+*.db-journal
+
+# Playwright related
+playwright-report/
+test-results/
+.traces/
+*.har
+*.json
+*.mp4
+*.png
+.screenshots/
+node_modules/
+*.lock
+
+# ReqNRoll (SpecFlow)
+TestExecution.json
+SpecFlowStepDefinitionReport.html
+SpecFlowPlusRunner/
+Logs/
+screenshots/
+*.feature.cs

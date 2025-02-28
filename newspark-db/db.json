@@ -76,20 +76,6 @@
       "title": "Create planning",
       "created": "2025-02-16T10:12:37.555Z",
       "last_modified": "2025-02-16T10:12:37.555Z"
-    },
-    {
-      "id": "8f63",
-      "user": "2",
-      "title": "Task for Tester",
-      "created": "2025-02-28T09:59:19.619Z",
-      "last_modified": "2025-02-28T09:59:19.620Z"
-    },
-    {
-      "id": "773b",
-      "user": "3",
-      "title": "Task for Developer",
-      "created": "2025-02-28T09:59:19.965Z",
-      "last_modified": "2025-02-28T09:59:19.965Z"
     }
   ],
   "users": [
