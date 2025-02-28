@@ -2,7 +2,7 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Python: Behave current file",
+            "name": "Behave: current file",
             "type": "debugpy",
             "request": "launch",
             "module": "behave",
@@ -10,6 +10,18 @@
             "args": [
                 "${file}"
             ]
+        },
+        {
+            "name": ".NET Test Debug",
+            "type": "coreclr",
+            "request": "launch",
+            "program": "dotnet",
+            "args": [
+                "test",
+            ],
+            "cwd": "${workspaceFolder}/newspark-art/CSharp",
+            "console": "integratedTerminal",
+            "stopAtEntry": false
         },
     ]
 }
