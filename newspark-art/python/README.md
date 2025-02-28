@@ -101,6 +101,17 @@ python/
 1. If you see import errors, ensure your virtual environment is activated
 2. If Playwright fails to start, try running `playwright install` again
 3. Verify the application is running at `http://localhost:5173/login` before starting tests
+4. On macOS, you may need to set the executable path for Chromium:
+   ```python
+   # In your environment.py or configuration file
+   executable_path="/Users/<user>/Library/Caches/ms-playwright/chromium-1155/chrome-mac/Chromium.app/Contents/MacOS/Chromium"
+   
+   # Use this path when launching the browser
+   browser = playwright.chromium.launch(
+       headless=False, 
+       executable_path=executable_path
+   )
+   ```
 
 ## Notes
 

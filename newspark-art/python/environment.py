@@ -19,7 +19,8 @@ def before_scenario(context, scenario):
         context.playwright = sync_playwright().start()
         context.browser = context.playwright.chromium.launch(
             headless=True,
-            args=['--disable-gpu', '--no-sandbox', '--disable-dev-shm-usage']
+            args=['--disable-gpu', '--no-sandbox', '--disable-dev-shm-usage'],
+            executable_path="/Users/jelle/Library/Caches/ms-playwright/chromium-1155/chrome-mac/Chromium.app/Contents/MacOS/Chromium"
         )
         context.browser_context = context.browser.new_context(
             viewport={'width': 1280, 'height': 720},
