@@ -20,7 +20,7 @@ def step_impl(context):
 
 @when('I click the Logout button')
 def step_impl(context):
-    context.login_page.click_login_button()
+    context.login_page.click_logout_button()
 
 @then('I should be redirected to the "{page_name}" page')
 def step_impl(context, page_name):

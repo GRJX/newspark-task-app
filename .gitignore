@@ -35,3 +35,4 @@ htmlcov/
 
 # C# files
 *.sln
+results/
