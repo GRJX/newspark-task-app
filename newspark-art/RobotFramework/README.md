@@ -31,20 +31,66 @@ pip install -r requirements.txt
 rfbrowser init
 ```
 
-Alternatively, you can use the installation script:
+## VS Code Setup
 
-```bash
-chmod +x install_browser_lib.sh
-./install_browser_lib.sh
+For the best development experience with Robot Framework, we recommend setting up VS Code with the following extensions:
+
+### 1. Required Extensions
+
+- **RobotCode - Robot Framework Language Server** (d-biehl.robotcode)
+  - Provides syntax highlighting, code completion, and validation for Robot Framework files
+  - Includes debugger support for Robot Framework tests
+  - Enables Go to Definition and Find References functionality
+
+- **Python** (ms-python.python)
+  - Provides Python language support and IntelliSense
+  - Enables virtual environment management and package installation
+  - Allows selecting the correct Python interpreter for your project
+
+- **Live Preview** (ms-vscode.live-server)
+  - Allows you to view HTML reports directly in VS Code
+  - Useful for reviewing test results without opening external browsers
+
+### 2. Python Interpreter Selection
+
+To ensure VS Code uses the correct Python interpreter from your virtual environment:
+
+1. Open the Command Palette (`Ctrl+Shift+P` or `Cmd+Shift+P` on macOS)
+2. Type and select "Python: Select Interpreter"
+3. Choose the interpreter from your virtual environment (usually listed as `.venv:venv`)
+4. Alternatively, click on the Python version in the status bar and select from the list
+
+When properly configured, you'll see the virtual environment name in the VS Code status bar.
+
+### 3. Configuration (optional)
+
+Add these settings to your VS Code `settings.json` file for optimal Robot Framework development:
+
+```json
+{
+  "robotcode.robot.pythonPath": "${workspaceFolder}/.venv/bin/python",
+  "robotcode.robot.loadArgumentsFromFiles": true,
+  "robotcode.language-server.python": "${workspaceFolder}/.venv/bin/python",
+  "editor.formatOnSave": true,
+  "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python"
+}
 ```
 
-### 3. Verify Installation
+### 4. Running Tests in VS Code
 
-To verify that the Browser library is properly installed, run:
+With RobotCode extension installed:
 
-```bash
-python -c "from Browser import Browser; print('Browser library is installed correctly')"
-```
+1. Open your `.robot` file
+2. Click the "Run" button above test cases or use the CodeLens links
+3. Alternatively, use the Test Explorer view to run and debug tests
+
+### 5. Debugging Tests
+
+To debug a Robot Framework test:
+
+1. Set breakpoints in your `.robot` file
+2. Click the "Debug" CodeLens link above a test
+3. Use the Debug console to inspect variables during test execution
 
 ## Running Tests
 
@@ -102,6 +148,7 @@ robot/
    *** Settings ***
    Library    Browser    timeout=10s    enable_playwright_debug=False
    ```
+5. If the Python interpreter isn't being detected correctly, try restarting VS Code after activating the virtual environment
 
 ## Usage Example
 
