@@ -31,7 +31,7 @@ def step_impl(context):
 def step_impl(context):
     # Validate that the current page number has decreased
     current_page = int(context.tasks_page.get_current_page_number())
-    assert current_page == 0, f"Expected current page number to be 1, but got {current_page}"
+    assert current_page == 1, f"Expected current page number to be 1, but got {current_page}"
 
 @then('the current page number should be updated')
 def step_impl(context):

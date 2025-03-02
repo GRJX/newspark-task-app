@@ -1,0 +1,50 @@
+# Robot Framework output files
+*.html
+log.html
+report.html
+output.xml
+*-screenshot-*.png
+playwright-log.txt
+results/
+
+# Browser library specific
+.pabot_results/
+browser/
+playwright-log.txt
+node_modules/
+package-lock.json
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environment
+env/
+venv/
+ENV/
+.env
+.venv
+
+# Misc
+.coverage
+htmlcov/
+.pytest_cache/
+*.log

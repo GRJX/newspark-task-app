@@ -1,6 +1,15 @@
-Feature: Manage Tasks
+*** Settings ***
+Documentation     Manage Tasks test cases
+Resource          ../resources/tasks_keywords.resource
+Resource          ../resources/login_keywords.resource
+Resource          ../resources/hooks.resource
 
-  Scenario: Add a new task
+Test Setup    Before Test
+Test Teardown    After Test
+
+
+*** Test Cases ***
+Add a new task
     Given I am logged in as "tester"
     And I am on the tasks page
     When I enter "New Task" in the input field
@@ -8,7 +17,7 @@ Feature: Manage Tasks
     Then I should see an alert message "Task added"
     And I should see "New Task" in the task list
 
-  Scenario: Edit an existing task
+Edit an existing task
     Given there is a task named "Existing Task" for "tester"
     And I am logged in as "tester"
     And I am on the tasks page
@@ -18,7 +27,7 @@ Feature: Manage Tasks
     Then I should see an alert message "Task edited"
     And I should see "Updated Task" in the task list
 
-  Scenario: Delete a task
+Delete a task
     Given there is a task named "Task to Delete" for "tester"
     And I am logged in as "tester"
     And I am on the tasks page
@@ -27,14 +36,14 @@ Feature: Manage Tasks
     Then I should see an alert message "Task deleted"
     And I should not see "Task to Delete" in the task list
 
-  Scenario: Add a task without a title
+Add a task without a title
     Given I am logged in as "tester"
     And I am on the tasks page
     When I leave the input field empty
     And I click the Add Task button
     Then I should see an error message "Task title cannot be empty"
 
-  Scenario: Edit a task to have an empty title
+Edit a task to have an empty title
     Given there is a task named "Empty Task" for "tester"
     And I am logged in as "tester"
     And I am on the tasks page
@@ -43,7 +52,7 @@ Feature: Manage Tasks
     And I click the Apply button
     Then I should see an error message "Task title cannot be empty"
 
-  Scenario: User can only see their own tasks
+User can only see their own tasks
     Given there is a task named "Task for Tester" for "tester"
     And there is a task named "Task for Developer" for "developer"
     And I am logged in as "tester"
