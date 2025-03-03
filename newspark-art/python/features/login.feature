@@ -10,7 +10,7 @@ Feature: Login and Logout
   Scenario: User logs out successfully
     Given I am logged in as "admin"
     When I click the Logout button
-    Then I should be redirected to the "tasks" page
+    Then I should be redirected to the "login" page
     And I should see the login form
 
   Scenario: User enters incorrect credentials
