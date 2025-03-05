@@ -1,0 +1,16 @@
+{
+  "cucumber.parameterTypes": [
+    { "name": "user", "regexp": ".+" },
+    { "name": "page_name", "regexp": ".+" },
+    { "name": "message", "regexp": ".+" },
+    { "name": "button_text", "regexp": ".+" },
+    { "name": "task_title", "regexp": ".+" },
+  ],
+  "cucumber.features": [
+    "tests/**/*.feature",
+  ],
+  "cucumber.glue": [
+    "tests/**/*.ts",
+  ]
+}
+  
