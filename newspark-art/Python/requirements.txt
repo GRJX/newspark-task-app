@@ -3,3 +3,4 @@ playwright==1.39.0
 pytest-asyncio==0.21.1
 parse==1.19.1
 parse-type==0.6.2
+behave-html-formatter

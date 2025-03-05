@@ -2,39 +2,15 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Behave: login.feature",
+            "name": "Behave: Run All",
             "type": "debugpy",
             "request": "launch",
             "module": "behave",
             "console": "integratedTerminal",
             "args": [
-                "./features/login.feature",
-                "--no-capture",
-                "--no-capture-stderr"
-            ]
-        },
-        {
-            "name": "Behave: pagination.feature",
-            "type": "debugpy",
-            "request": "launch",
-            "module": "behave",
-            "console": "integratedTerminal",
-            "args": [
-                "./features/pagination.feature",
-                "--no-capture",
-                "--no-capture-stderr"
-            ]
-        },
-        {
-            "name": "Behave: tasks.feature",
-            "type": "debugpy",
-            "request": "launch",
-            "module": "behave",
-            "console": "integratedTerminal",
-            "args": [
-                "./features/tasks.feature",
-                "--no-capture",
-                "--no-capture-stderr"
+                "./features",
+                "--format=behave_html_formatter:HTMLFormatter",
+                "--outfile=reports/report.html"
             ]
         }
     ]
