@@ -16,8 +16,7 @@ After Test
 
 Start Browser
     [Documentation]     Start a new browser instance.
-
-    New Browser             chromium    headless=${True}
+    New Browser             chromium    headless=${False}
     ${context}              New Context     viewport={'width': 1280, 'height': 720}
     Set Browser Timeout     5s
     New Page                ${BASE_URL}
@@ -27,5 +26,5 @@ Start Browser
 
 Reset Database
     [Documentation]     Reset the database by copying init_db.json to db.json
-    ${project_path}=    Evaluate    os.path.dirname(os.path.dirname(os.path.dirname('${CURDIR}')))    modules=os
+    ${project_path}    Evaluate    os.path.dirname(os.path.dirname(os.path.dirname('${CURDIR}')))    modules=os
     Copy File    ${project_path}/newspark-db/init_db.json    ${project_path}/newspark-db/db.json

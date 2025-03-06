@@ -4,6 +4,7 @@ Library    Process
 Resource    ../resources/global_keywords.resource
 Resource    ../resources/login_keywords.resource
 
+
 *** Variables ***
 ${TASKS_PAGE}              /tasks
 ${NEXT_BUTTON}             [data-testid="next-button"]
@@ -16,6 +17,7 @@ ${ADD_TASK_BUTTON}         [data-testid="add-task-button"]
 ${APPLY_BUTTON}            [data-testid="apply-button"]
 ${CONFIRM_DELETE_BUTTON}   [data-testid="delete-button"]
 ${ALERT_MESSAGE}           [data-testid="alert-message"]
+
 
 *** Keywords ***
 I Am On The Tasks Page

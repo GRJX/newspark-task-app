@@ -18,7 +18,7 @@ def before_scenario(context, scenario):
         # Initialize Playwright
         context.playwright = sync_playwright().start()
         context.browser = context.playwright.chromium.launch(
-            headless=True,
+            headless=False,
             args=['--disable-gpu', '--no-sandbox', '--disable-dev-shm-usage'],
             executable_path="/Users/jelle/Library/Caches/ms-playwright/chromium-1155/chrome-mac/Chromium.app/Contents/MacOS/Chromium"
         )

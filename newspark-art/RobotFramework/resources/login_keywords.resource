@@ -3,6 +3,7 @@ Library    Browser
 Library    Process
 Resource    ../resources/global_keywords.resource
 
+
 *** Variables ***
 ${LOGIN_PAGE}             /login
 ${USERNAME_INPUT}         [data-testid="username-input"]

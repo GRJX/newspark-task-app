@@ -24,7 +24,6 @@ Before(async function(this: CustomWorld, scenario) {
     // Initialize Playwright
     this.browser = await chromium.launch({
       headless: false,
-      slowMo: 500,
       args: ['--disable-gpu', '--no-sandbox', '--disable-dev-shm-usage'],
       executablePath: '/Users/jelle/Library/Caches/ms-playwright/chromium-1155/chrome-mac/Chromium.app/Contents/MacOS/Chromium'
     });

@@ -1,9 +1,7 @@
 module.exports = {
   default: {
     paths: [
-      'tests/features/login.feature',
-      'tests/features/pagination.feature',
-      'tests/features/tasks.feature'
+      'tests/features/*.feature'
     ],
     require: [
       'tests/support/*.ts',

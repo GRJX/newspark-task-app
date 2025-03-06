@@ -4,12 +4,10 @@
     {
       "type": "node",
       "request": "launch",
-      "name": "Debug Cucumber Feature",
-      "program": "${workspaceFolder}/node_modules/@cucumber/cucumber/bin/cucumber-js",
+      "name": "Cucumber-js: Run All",
+      "program": "${workspaceFolder}/node_modules/.bin/cucumber-js",
       "args": [
-        "${file}",
-        "--require-module", "ts-node/register",
-        "--require", "${workspaceFolder}/step-definitions/**/*.ts"
+        "--format", "html:reports/cucumber-report.html",
       ],
       "console": "integratedTerminal",
       "cwd": "${workspaceFolder}"
